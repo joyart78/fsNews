@@ -58,7 +58,7 @@ export default function Input({
       isResult
         ? localStorage.getItem("currencyResult")
         : localStorage.getItem("currency")
-    ) as CurrencyCode | null;
+    ) as CurrencyCode;
 
     return (
       allCurrency.find((c) => c.label === storedCurrency) || allCurrency[0]

@@ -1,6 +1,6 @@
-import styles from "./style.module.css";
+import styles from "./styles.module.css";
 
-export default function CurrencyLoader() {
+export default function SpoilerLoader() {
   return (
     <div className={styles.container}>
       <div className={styles.particle}></div>

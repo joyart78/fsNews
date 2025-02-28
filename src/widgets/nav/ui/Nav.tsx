@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styles from "./styles.module.css";
+import CurrencyNav from "@/features/converter/ui/Nav/CurrencyNav/CurrencyNav.tsx";
 
 const setActive = ({ isActive }: { isActive: boolean }): string =>
   isActive ? `${styles.link} ${styles.active}` : styles.link;
@@ -31,8 +32,7 @@ const Nav = () => {
       <ul>
         <li>
           <NavLink to="/converter" className={setActive}>
-            Converter
-            {/*<CurrencyWidget />*/}
+            <CurrencyNav />
           </NavLink>
         </li>
       </ul>

@@ -5,7 +5,7 @@ import { converterApi } from "@/entities/converter/api/converterApi.ts";
 import { setResultValue } from "@/entities/converter/slices/input/inputSlice.ts";
 import Input from "@/features/converter/ui/Input/Input.tsx";
 import { AppDispatch, RootState } from "@/app/store/store.ts";
-import {useEffect} from "react";
+import { useEffect } from "react";
 
 type CurrencyCode = "USD" | "EUR" | "GBP" | "CAD";
 
@@ -26,18 +26,16 @@ export default function ConverterWidget() {
   const { data, error } = converterApi.useGetCurrencyQuery(inputCurrency);
 
   useEffect(() => {
-
     if (data) {
       dispatch(setResultValue(data.rates[resultCurrency]));
     }
-    if (error) console.error(error)
-  },[data, inputValue])
-
+    if (error) console.error(error);
+  }, [data, inputValue, inputCurrency]);
 
   let input: number | "";
 
   if (inputValue === 0) {
-    input = '';
+    input = "";
   } else input = inputValue;
 
   return (
