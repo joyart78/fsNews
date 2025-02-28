@@ -1,0 +1,24 @@
+body {
+  font-family: sans-serif;
+}
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.container {
+  margin: 0 auto;
+  max-width: 800px;
+}
+.link {
+  text-decoration: none;
+  color: white;
+  margin: 0 30px;
+}
+.link:hover {
+  text-decoration: underline;
+}
+.active {
+  color: #a789dd;
+}

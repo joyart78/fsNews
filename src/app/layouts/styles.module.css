@@ -1,0 +1,28 @@
+body {
+  font-family: sans-serif;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: #27272e;
+  color: white;
+  height: 70px;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+.main {
+  /*overflow: auto;*/
+  /*padding: 10px 0;*/
+  /*display: flex;*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
+  /*margin: 70px 5px 0;*/
+}
