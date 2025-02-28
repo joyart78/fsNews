@@ -11,7 +11,6 @@ export const inputSlice = createSlice({
   reducers: {
     setInputValue: (state, action) => {
       state.inputValue = action.payload;
-      console.log(state.inputValue);
     },
     setCurrency: (state, action) => {
       state.inputCurrency = action.payload;

@@ -15,11 +15,9 @@ export default function CurrencyNav() {
 
   const dispatch: AppDispatch = useDispatch();
   const { data, error, isLoading } =
-      converterApi.useGetCurrencyQuery(inputCurrency);
+    converterApi.useGetCurrencyQuery(inputCurrency);
 
   useEffect(() => {
-    console.log(data)
-
     if (data) setValue(data.rates[resultCurrency]);
     if (error) {
       console.error("Failed to fetch currency data:", error);
