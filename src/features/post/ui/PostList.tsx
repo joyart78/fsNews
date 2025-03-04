@@ -65,7 +65,7 @@ export default function PostList() {
   }
 
   return (
-    <div>
+    <div className={styles.container}>
       {posts.map((post) => (
         <Post key={post.id} prop={post} />
       ))}
