@@ -1,0 +1,30 @@
+.post_card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 7px;
+  max-width: 400px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  z-index: 0;
+}
+
+.post_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.post_title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.post_body {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}

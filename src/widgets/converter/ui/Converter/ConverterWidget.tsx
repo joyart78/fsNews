@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import arrows from "../img/arrows-exchange.svg";
 import { converterApi } from "@/entities/converter/api/converterApi.ts";
 import { setResultValue } from "@/entities/converter/slices/input/inputSlice.ts";
-import Input from "@/features/converter/ui/Input/Input.tsx";
 import { AppDispatch, RootState } from "@/app/store/store.ts";
 import { useEffect } from "react";
+import { Input } from "@/features/converter/ui";
 
 type CurrencyCode = "USD" | "EUR" | "GBP" | "CAD";
 

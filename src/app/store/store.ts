@@ -3,6 +3,7 @@ import { postsApi } from "@/entities/posts/api/postsApi.ts";
 import { profileApi } from "@/entities/profile";
 import { inputSlice } from "@/entities/converter/slices/input/inputSlice.ts";
 import { converterApi } from "@/entities/converter/api/converterApi.ts";
+import { postsSlice } from "@/entities/posts/slices/postsSlice.ts";
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     [profileApi.reducerPath]: profileApi.reducer,
     input: inputSlice.reducer,
     [converterApi.reducerPath]: converterApi.reducer,
+    posts: postsSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(

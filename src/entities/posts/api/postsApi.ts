@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { Posts } from "@/entities/posts/model/type.ts";
+import { IPost } from "@/entities/posts/model/type.ts";
 
 export const postsApi = createApi({
   reducerPath: "postsApi",
@@ -7,8 +7,8 @@ export const postsApi = createApi({
     baseUrl: `${import.meta.env.VITE_API_URL_PLACEHOLDER}`,
   }),
   endpoints: (builder) => ({
-    getPosts: builder.query<Posts, void>({
-      query: () => "posts",
+    getPosts: builder.query<IPost[], number>({
+      query: (page) => `posts?_page=${page}&_limit=10`,
     }),
   }),
 });

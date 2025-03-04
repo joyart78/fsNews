@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styles from "./styles.module.css";
-import CurrencyNav from "@/features/converter/ui/Nav/CurrencyNav/CurrencyNav.tsx";
+import { CurrencyNav } from "@/features/converter/ui";
 
 const setActive = ({ isActive }: { isActive: boolean }): string =>
   isActive ? `${styles.link} ${styles.active}` : styles.link;

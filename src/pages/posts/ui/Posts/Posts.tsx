@@ -1,10 +1,10 @@
-import MappedPosts from "@/entities/posts";
-import styles from "./Posts.module.css";
+import styles from "./styles.module.css";
+import PostList from "@/features/post";
 
 const Posts = () => {
   return (
     <div className={styles.container}>
-      <MappedPosts />
+      <PostList />
     </div>
   );
 };

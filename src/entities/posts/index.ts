@@ -1,3 +1,3 @@
-import MappedPosts from "@/entities/posts/mappers/Posts.tsx";
+import Post from "@/entities/posts/ui/Post.tsx";
 
-export default MappedPosts;
+export default Post;

@@ -1,13 +1,7 @@
 import styles from "./styles.module.css";
+import type { IPost } from "@/entities/posts/model/type.ts";
 
-interface Post {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
-}
-
-export default function Post({ prop }: { prop: Post }) {
+export default function Post({ prop }: { prop: IPost }) {
   return (
     <div className={styles.post_card}>
       <h2 className={styles.post_title}>{prop.title}</h2>

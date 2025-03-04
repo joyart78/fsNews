@@ -1,3 +1,3 @@
-import Post from "@/features/post/ui/post.tsx";
+import PostList from "@/features/post/ui/PostList.tsx";
 
-export default Post;
+export default PostList;
