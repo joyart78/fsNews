@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./styles.module.css";
 import { useState } from "react";
 import * as React from "react";
-import { useAuth, useVerific } from "@/entities/login";
+import { useAuth, useVerific } from "@/entities/auth";
 
 function Login() {
   const navigate = useNavigate();

@@ -1,58 +1,16 @@
-import { postsApi } from "@/entities/posts/api/postsApi.ts";
 import Loader from "@/shared/Loader/Loader.tsx";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "@/app/store/store.ts";
-import { useEffect, useState } from "react";
-import {
-  nextPage,
-  isHasMore,
-  setPosts,
-} from "@/entities/posts/slices/postsSlice.ts";
 import Post from "@/entities/posts/ui/Post.tsx";
 import styles from "./styles.module.css";
+import {useInfiniteScroll} from "@/entities/posts";
 
 export default function PostList() {
-  const [isScrolling, setIsScrolling] = useState(false);
-  const page = useSelector((state: RootState) => state.posts.page);
-  const hasMore = useSelector((state: RootState) => state.posts.hasMore);
-  const posts = useSelector((state: RootState) => state.posts.posts);
-  const dispatch = useDispatch();
+  const { posts, isLoading, isFetching, error, loaderRef, hasMore } = useInfiniteScroll();
 
-  const { data, error, isLoading, isFetching } =
-    postsApi.useGetPostsQuery(page);
-
-  useEffect(() => {
-    if (data) {
-      dispatch(setPosts(data));
-      dispatch(isHasMore(data.length));
-    }
-  }, [data]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (isScrolling || isFetching || !hasMore) return;
-
-      const { scrollTop, scrollHeight, clientHeight } =
-        document.documentElement;
-      const isNearBottom = scrollTop + clientHeight >= scrollHeight - 100;
-
-      if (isNearBottom) {
-        setIsScrolling(true);
-        dispatch(nextPage());
-
-        setTimeout(() => setIsScrolling(false), 500);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isFetching, isScrolling]);
-
-  if (isLoading && page === 1) {
+  if (isLoading) {
     return (
-      <div className={styles.loader}>
-        <Loader />
-      </div>
+        <div className={styles.loader}>
+          <Loader />
+        </div>
     );
   }
 
@@ -65,11 +23,16 @@ export default function PostList() {
   }
 
   return (
-    <div className={styles.container}>
-      {posts.map((post) => (
-        <Post key={post.id} prop={post} />
-      ))}
-      {isFetching && <Loader />}
-    </div>
+      <div className={styles.container}>
+        {posts.map((post) => (
+            <Post key={post.id} prop={post} />
+        ))}
+
+        {hasMore && (
+            <div ref={loaderRef} className={styles.loadingIndicator}>
+              {isFetching && <Loader />}
+            </div>
+        )}
+      </div>
   );
 }

@@ -1,3 +1,4 @@
 import Post from "@/entities/posts/ui/Post.tsx";
+import {useInfiniteScroll} from "@/entities/posts/utils/hooks/useInfiniteScroll.ts";
 
-export default Post;
+export  {Post, useInfiniteScroll};

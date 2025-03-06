@@ -7,29 +7,26 @@ const setActive = ({ isActive }: { isActive: boolean }): string =>
 
 const Nav = () => {
   return (
-    <nav className={`${styles.container} ${styles.nav}`}>
-      <ul>
+    <nav className={styles.container}>
+      <ul className={styles.nav}>
         <li>
           <NavLink to="/" className={setActive}>
             Home
           </NavLink>
         </li>
-      </ul>
-      <ul>
+
         <li>
           <NavLink to="/news" className={setActive}>
             News
           </NavLink>
         </li>
-      </ul>
-      <ul>
+
         <li>
           <NavLink to="/profile" className={setActive}>
             Profile
           </NavLink>
         </li>
-      </ul>
-      <ul>
+
         <li>
           <NavLink to="/converter" className={setActive}>
             <CurrencyNav />

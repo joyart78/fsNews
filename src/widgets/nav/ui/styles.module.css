@@ -1,16 +1,27 @@
 body {
   font-family: sans-serif;
 }
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  background-color: #27272e;
+  color: white;
+  height: 70px;
+  width: 100%;
+
+}
 .nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
-.container {
   margin: 0 auto;
   max-width: 800px;
 }
+
 .link {
   text-decoration: none;
   color: white;

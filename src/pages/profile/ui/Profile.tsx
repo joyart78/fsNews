@@ -1,7 +1,6 @@
 import styles from "./styles.module.css";
 import Loader from "@/shared/Loader/Loader.tsx";
-import { ProfileInfo } from "@/features/profile";
-import { profileApi } from "@/entities/profile";
+import { profileApi, ProfileInfo } from "@/entities/profile";
 
 function Profile() {
   const { data, error, isLoading } = profileApi.useGetProfileQuery();

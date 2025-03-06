@@ -1,4 +1,4 @@
-import { Features, Hero } from "@/features/home";
+import { Features, Hero } from "@/widgets/home/ui";
 
 const Home = () => {
   return (
